@@ -77,9 +77,16 @@ class HomePage extends StatelessWidget {
     //     break;
     // }
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("O maior número é: $resultado")),
-    );
+    if (num1 != num2) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("O maior número é: $resultado")),
+      );
+    }
+    else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Os números são iguais ($num1)")),
+      );
+    }
   } 
 
   Widget newTextField(TextEditingController controller, String text) {
